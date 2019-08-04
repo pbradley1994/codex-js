@@ -11,6 +11,7 @@ const config = {
 
 const game = new Phaser.Game(config)
 const bg_color = 0x202020
+const history = 1
 
 class GameBoard {
     // Must be square grid
@@ -77,7 +78,7 @@ class GameBoard {
             this.get_im(x, y).setAlpha(this.get_alpha(x, y))
         } else {
             if (this.get_alpha(x, y) > 0) {
-                this.alpha_grid[y*this.num_x + x] -= 0.1
+                this.alpha_grid[y*this.num_x + x] -= (1/history)
             }
             if (this.get_alpha(x, y) <= 0) {
                 this.get_im(x, y).setTexture('cell_off')    
