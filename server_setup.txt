@@ -2,6 +2,6 @@ Setting up server
 
 From cmd in local directory:
 
-> python -m SimpleHTTPServer
+> python -m http.server
 
 then in chrome "localhost:8000"
